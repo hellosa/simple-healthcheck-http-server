@@ -6,6 +6,7 @@ __version__ = "0.2"
 import BaseHTTPServer
 import re
 import telnetlib
+import daemon
 
 class HealthCheckHTTPRequestHandler(BaseHTTPServer.BaseHTTPRequestHandler):
 
@@ -38,7 +39,8 @@ class HealthCheckHTTPRequestHandler(BaseHTTPServer.BaseHTTPRequestHandler):
 
 def main(HandlerClass = HealthCheckHTTPRequestHandler,
         ServerClass = BaseHTTPServer.HTTPServer):
-    BaseHTTPServer.test(HandlerClass, ServerClass)
+    with daemon.DaemonContext():
+        BaseHTTPServer.test(HandlerClass, ServerClass)
 
 
 if __name__ == "__main__" :
