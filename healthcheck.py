@@ -31,8 +31,9 @@ class HealthCheckHTTPRequestHandler(SimpleHTTPServer.SimpleHTTPRequestHandler):
                 self.send_response(200)
             except Exception, e:
                 self.send_response(503)
+            finally:
+                self.end_headers()
 
-        self.end_headers()
         return None
 
 
