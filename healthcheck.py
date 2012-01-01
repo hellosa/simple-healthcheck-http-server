@@ -1,14 +1,13 @@
 #!/usr/bin/python 
 #coding=utf-8
 
-__version__ = "0.1"
+__version__ = "0.2"
 
-import SimpleHTTPServer
 import BaseHTTPServer
 import re
 import telnetlib
 
-class HealthCheckHTTPRequestHandler(SimpleHTTPServer.SimpleHTTPRequestHandler):
+class HealthCheckHTTPRequestHandler(BaseHTTPServer.BaseHTTPRequestHandler):
 
     server_version = "HealthCheck/" + __version__
 

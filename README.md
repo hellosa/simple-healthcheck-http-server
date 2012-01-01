@@ -3,7 +3,7 @@
 HAProxy can be use to proxy for TCP and HTTP-based applications. But when we use it to proxy the TCP request, how can 
 we perform the health-check? May this tool can help u.
 
-This tool is based on SimpleHTTPServer, "HEAD http://localhost:8000/healthcheck_6379" will examine the port 6379, when 
+This tool is based on BaseHTTPServer, "HEAD http://localhost:8000/healthcheck_6379" will examine the port 6379, when 
 it is alive, return 200. Otherwise, return 503.
  
 ### HAProxy Config:
